@@ -1,0 +1,13 @@
+{
+    "name": "tasks-test",
+    "description": "Test application about collaborative management tasks",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies" : {
+	"express": "3.x"	      
+    },
+    "license": "MIT",
+    "engines": {
+	"node": ">=0.6"
+    }
+}
