@@ -1,10 +1,7 @@
-/**
- * Index routes.
- */
-var index = {};
-
-index.index = function(req, res) {
+module.exports = function(app) {
+  app.get('/', function(req, res) {
     res.render('index', {});
+  });
+  
+  require('./api')(app);
 };
-
-exports.index = index;

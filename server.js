@@ -4,7 +4,6 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , http = require('http');
 
 /**
@@ -37,7 +36,8 @@ app.configure('production', function(){
 /**
  * Routes
  */
-app.get('/', routes.index.index);
+require('./routes')(app);
+
 
 /**
  * Create server
