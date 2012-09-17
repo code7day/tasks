@@ -1,1 +1,3 @@
-# This is my README
+# Tasks
+
+Example app with nodejs, expressjs, mongoose and emberjs.
