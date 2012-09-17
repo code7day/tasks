@@ -46,14 +46,15 @@
   <script type="text/x-handlebars" data-template-name="home">
     <div>
       <h1>Welcome!!</h1>
-      {{outlet}}
     </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="tasks">
+    {{view App.TasksSearchView placeHolder="Search..."}}
     <table class="table">
       <tbody>
-        {{#each task in content}}
+        {{#each task in App.tasksController}}
+        {{#view App.TaskView}}
         <tr>
           <td>{{task.name}}</td>
           <td>
@@ -61,10 +62,15 @@
             <a href="#" class="btn btn-danger">Delete</a>
           </td>
         </tr>
+        {{/view}}
         {{/each}}
       </tbody>
     </table>
-    <a href="#" class="btn btn-primary">New</a>      
+    <a href="#" class="btn btn-primary">New</a>          
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="task">
+    
   </script>
 
 </body>
