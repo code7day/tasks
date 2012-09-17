@@ -19,9 +19,53 @@
   <![endif]-->
   <script src="/javascripts/libs/jquery-1.7.2.min.js"></script>
   <script src="/javascripts/libs/handlebars-1.0.0.beta.6.js"></script>
-  <script src="/javascripts/libs/ember-1.0.pre.min.js"></script>
-  <script src="/javascripts/app.js"></script>
+  <script src="/javascripts/libs/ember-1.0.pre.js"></script>
+  <script src="/javascripts/libs/ember-data.js"></script>
+  <script src="/javascripts/app.js"></script>  
 </head>
 <body>
+  <script type="text/x-handlebars" data-template-name="application">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">{{App.name}}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="home"><a {{action "doHome"}}>Home</a></li>
+              <li class="tasks"><a {{action "doTasks"}}>Tasks</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="home">
+    <div>
+      <h1>Welcome!!</h1>
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="tasks">
+    <table class="table">
+      <tbody>
+        {{#each task in content}}
+        <tr>
+          <td>{{task.name}}</td>
+          <td>
+            <a href="#" class="btn btn-primary">Edit</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <a href="#" class="btn btn-primary">New</a>      
+  </script>
+
 </body>
 </html>

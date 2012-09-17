@@ -4,7 +4,7 @@ module.exports = {
   index: function(req, res) {
     Task.find(function(err, tasks) {
       if (err) { console.log(err); }
-      else { res.json(tasks); }
+      else { res.json({tasks: tasks}); }
     });
    },
 
